@@ -16,6 +16,6 @@ class PostsController extends Controller
         $post = Post::find($id);
         $data = ['post' => $post];
         return view('posts.show', $data);
-        
+
     }
 }
