@@ -6,7 +6,9 @@ class PostsController extends Controller
 {
     public function index()
     {
-        return view('posts.index');
+        $posts = Post::orderBy('created_at','DESC')->get();
+        $data = ['posts' => $posts];
+        return view('posts.index',$data);
     }
 
     public function show($id)
